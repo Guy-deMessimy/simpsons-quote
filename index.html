@@ -30,7 +30,7 @@
 		<section class="section">
 			<div class="container">
 				<h1 class="title">Simpson API</h1>
-				<div class="content"></div>
+                <div class="content"></div>
 			</div>
 		</section>
 
@@ -50,14 +50,13 @@
                      })
                     .then(function(simpson) {
                         console.log('data decoded from JSON:', simpson);
-            // Build a block of HTML
-                const simpsonHtml = `
-                    <p><strong>${simpson.character}</strong></p>
-                    <img src="${simpson.image}" />
-                    <p><em>${simpson.quote}<em></p>
-                `;
-                document.querySelector('.content').innerHTML = simpsonHtml;
-                    });
+                        const simpsonHtml = `
+                            <p><strong>${simpson.character}</strong></p>
+                            <img src="${simpson.image}" />
+                            <p><em>${simpson.quote}<em></p>
+                             `;
+                        document.querySelector('.content').innerHTML = simpsonHtml;     
+                    });           
             }
             fetchSimpsonsJSON();
         </script>   
