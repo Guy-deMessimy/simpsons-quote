@@ -40,8 +40,28 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
 			integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs="
 			crossorigin="anonymous"
-		></script>
-        <script src="axios.js"></script>
+        ></script>
         
+        <script> 
+            // This function loads pokemon data from the Pokemon API
+            function fetchPokemonJSON() {
+                const pokemonId = 1;
+                const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+                axios.get(url)
+                    .then(function(response) {
+                        return response.data; // response.data instead of response.json() with fetch
+                     })
+                    .then(function(pokemon) {
+                        console.log('data decoded from JSON:', pokemon);
+            // Build a block of HTML
+                const pokemonHtml = `
+                    <p><strong>${pokemon.name}</strong></p>
+                    <img src="${pokemon.sprites.front_shiny}" />
+                `;
+                document.querySelector('#pokemon').innerHTML = pokemonHtml;
+                    });
+            }
+            fetchPokemonJSON();
+        </script>   
 	</body>
 </html>
