@@ -30,7 +30,8 @@
 		<section class="section">
 			<div class="container">
 				<h1 class="title">Simpson API</h1>
-                <div class="content"></div>
+				<div class="content"></div>
+				<button class="quote_btn">Change quote</button>
 			</div>
 		</section>
 
@@ -58,7 +59,15 @@
                         document.querySelector('.content').innerHTML = simpsonHtml;     
                     });           
             }
-            fetchSimpsonsJSON();
+			fetchSimpsonsJSON();
+			
+			const btnQuote = document.querySelector(".quote_btn")
+			btnQuote.addEventListener("click", function() {
+  			fetchSimpsonsJSON()
+}); 
+
+
+
         </script>   
 	</body>
 </html>
